@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Test Route</title>
+  </head>
+  <body>
+  <div class="frameContent">
+    <div id="first-name"></div>
+    <div id="last-name"></div>
+  </div>
+    <script lang="javascript">
+      const firstName = document.getElementById('first-name'),
+        lastName = document.getElementById('last-name');
+      
+      function formListener(event) {
+        const message = JSON.parse(event.data);
+        firstName.innerHTML = message.firstName;
+        lastName.innerHTML = message.lastName;
+      }
+      window.addEventListener("message", formListener);
+    </script>
+  </body>
+</html>
